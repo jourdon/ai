@@ -74,6 +74,9 @@ class Ai
      */
     public function get($limit = null)
     {
+        if(!$this->config){
+            throw new \Exception('invalid argument: config');
+        }
         if (!preg_match("/http:\/\/[\w.]+[\w\/]*[\w.]*\??[\w=&\+\%]*/is", $this->params)) {
             $data['image'] = base64_encode(file_get_contents($this->params));
 
@@ -108,14 +111,14 @@ class Ai
      */
     public function where($param = 'product', $type = 'search')
     {
-        if (!array_key_exists($param, $this->config['type'])) {
+        if (!array_key_exists($param, $this->type)) {
             throw new \Exception('invalid argument:'.$param);
         }
         if (!in_array($type, $this->whereType)) {
             throw new \Exception('invalid argument:'.$type);
         }
         $this->search = $type;
-        $this->endPoint = $this->config['type'][$param].$type;
+        $this->endPoint = $this->type[$param].$type;
 
         return $this;
     }
