@@ -1,0 +1,35 @@
+{
+    "name": "jourdon/ai",
+    "description": "A package about baidu ai",
+    "keywords": [
+        "baidu",
+        "ai",
+        "image-search",
+        "laravel"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "jourdon",
+            "email": "admin@qiehe.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Ai\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Ai\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ai\\ServiceProvider"
+            ]
+        }
+    },
+    "require": {}
+}
