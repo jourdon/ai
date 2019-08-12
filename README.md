@@ -1,4 +1,5 @@
-# 使用百度AI调用图片搜索功能
+# 以图搜图功能
+>  使用的是百度AI平台，需申请百度AI开放平台帐号
 
 [![Latest Stable Version](https://poser.pugx.org/jourdon/ai/version)](https://github.com/jourdon/ai)
 [![Total Downloads](https://poser.pugx.org/jourdon/ai/downloads)](https://packagist.org/packages/jourdon/ai)
@@ -45,8 +46,9 @@ app('ai')
 ->select($path)
 //API类型   方法类型
 ->where('product','search')
-//可选参数 参考[官方文档](http://ai.baidu.com/docs#/IMAGESEARCH-API/f04ab525 "官方文档")
+//可选参数 参考官方文档
 ->options($options)
 ->get(10);
 
 ```
+[官方文档](http://ai.baidu.com/docs#/IMAGESEARCH-API/f04ab525)
